@@ -1,5 +1,6 @@
 package org.vaadin.cropper.demo;
 
+import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.data.Property;
 import com.vaadin.server.ExternalResource;
@@ -15,6 +16,7 @@ import org.vaadin.easyuploads.UploadField;
 import java.io.File;
 
 @SpringUI()
+@Theme("valo")
 @Widgetset("org.vaadin.cropper.demo.WidgetSet")
 public class DemoUI extends UI {
 
@@ -29,6 +31,8 @@ public class DemoUI extends UI {
     protected void init(final VaadinRequest vaadinRequest) {
 
         VerticalLayout layout = new VerticalLayout();
+        layout.setMargin(true);
+
         // event area
         cropEvent = new Label();
         cropEvent.setWidth("100%");

@@ -1,13 +1,14 @@
 Vaadin Cropper
 ==============
 
-Panel that is able to get collapsed and expand. The expand mode lays over the content...
+Cropper that allows to crop an image in given aspec-ratio...
 
-![showcase](assets/showcase.gif)
+![showcase](assets/screenshot.png)
 
 Main Features
 ========
 
+*coming soon...*
 
 
 Workflow
@@ -18,13 +19,13 @@ Add the dependency to your pom the GWT inherits will get automatically added by 
 ```xml
 <dependency>
     <groupId>org.vaadin.addons</groupId>
-    <artifactId>vaadin-sliderpanel</artifactId>
-    <version>${vaadin-sliderpanel-version}</version>
+    <artifactId>vaadin-cropper</artifactId>
+    <version>${vaadin-cropper-version}</version>
 </dependency>
 ```
 
 ```xml
-<inherits name="org.vaadin.sliderpanel.WidgetSet" />
+<inherits name="org.vaadin.cropper.WidgetSet" />
 ```
 
 Details to the addon you can find on [Vaadin](https://vaadin.com/directory#addon/sliderpanel)
