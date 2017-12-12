@@ -2,12 +2,13 @@ package org.vaadin.cropper.demo;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
-import com.vaadin.data.Property;
+import com.vaadin.data.HasValue;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.*;
+import com.vaadin.v7.data.Property;
 import org.springframework.beans.factory.annotation.Value;
 import org.vaadin.cropper.Cropper;
 import org.vaadin.cropper.client.CropSelection;
@@ -92,12 +93,11 @@ public class DemoUI extends UI {
             }
         }));
         TextField aspectRatio = new TextField();
-        aspectRatio.setImmediate(true);
         aspectRatio.setDescription("aspectRatio");
         aspectRatio.setValue("0.0");
-        aspectRatio.addValueChangeListener(new Property.ValueChangeListener() {
+        aspectRatio.addValueChangeListener(new HasValue.ValueChangeListener<String>() {
             @Override
-            public void valueChange(Property.ValueChangeEvent event) {
+            public void valueChange(HasValue.ValueChangeEvent<String> valueChangeEvent) {
                 if (aspectRatio.getValue() != null) {
                     cropper.setAspectRatio(Double.parseDouble(aspectRatio.getValue()));
                 }
@@ -110,7 +110,7 @@ public class DemoUI extends UI {
         uploadField.setFieldType(UploadField.FieldType.FILE);
         uploadField.setAcceptFilter("image/*");
         uploadField.setWriteThrough(true);
-        uploadField.addValueChangeListener(new Property.ValueChangeListener() {
+        uploadField.addListener(new Property.ValueChangeListener() {
             @Override
             public void valueChange(Property.ValueChangeEvent valueChangeEvent) {
                 if (uploadField.getValue() != null) {
